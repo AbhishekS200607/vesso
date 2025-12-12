@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vesso Finance - Find Your Perfect Financial Product</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <!-- Landing Page -->
+    <div id="landing-page" class="page active">
+        <div class="container">
+            <div class="hero">
+                <h1>Find the right financial product in <span class="highlight">30 seconds</span></h1>
+                <p>Get personalized recommendations for credit cards, bank accounts, investments, and loans</p>
+                <button class="cta-button" onclick="showFinder()">Start Finder</button>
+                
+                <div class="trust-signals">
+                    <div class="trust-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
+                        </svg>
+                        <span>Secure</span>
+                    </div>
+                    <div class="trust-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M7 2v11h3v9l7-12h-4l4-8z"/>
+                        </svg>
+                        <span>Fast</span>
+                    </div>
+                    <div class="trust-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                        </svg>
+                        <span>Verified</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Finder Form -->
+    <div id="finder-page" class="page">
+        <div class="main-container">
+            <div class="app-card">
+                <!-- Left Sidebar -->
+                <div class="sidebar">
+                    <div class="logo">
+                        <h3>Vesso</h3>
+                        <span>Finance</span>
+                    </div>
+                    
+                    <div class="steps-indicator">
+                        <div class="step-item active" id="sidebar-step-1">
+                            <div class="step-number">1</div>
+                            <span>Profile</span>
+                        </div>
+                        <div class="step-item" id="sidebar-step-2">
+                            <div class="step-number">2</div>
+                            <span>Needs</span>
+                        </div>
+                        <div class="step-item" id="sidebar-step-3">
+                            <div class="step-number">3</div>
+                            <span>Results</span>
+                        </div>
+                    </div>
+                    
+                    <div class="trust-badges">
+                        <div class="badge">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
+                            </svg>
+                            SSL Secure
+                        </div>
+                        <div class="badge">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M7 2v11h3v9l7-12h-4l4-8z"/>
+                            </svg>
+                            Instant
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Content -->
+                <div class="content-area">
+                    <form id="finder-form">
+                        <!-- Step 1 -->
+                        <div class="step active" id="step-1">
+                            <h2>Tell us about yourself</h2>
+                            <div class="form-group">
+                                <label>Your Name</label>
+                                <input type="text" id="name" placeholder="Enter your full name" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Your Age</label>
+                                <input type="number" id="age" placeholder="Enter your age" min="18" required>
+                            </div>
+                            <button type="button" class="primary-button" onclick="nextStep()">Next Step</button>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="step" id="step-2">
+                            <h2>What are you looking for, <span id="user-name"></span>?</h2>
+                            <div class="product-grid">
+                                <label class="product-card">
+                                    <input type="radio" name="product" value="credit_card">
+                                    <div class="card-content">
+                                        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/>
+                                        </svg>
+                                        <span>Credit Card</span>
+                                    </div>
+                                </label>
+                                <label class="product-card">
+                                    <input type="radio" name="product" value="bank_account">
+                                    <div class="card-content">
+                                        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M10 16V8c0-1.11.89-2 2-2s2 .89 2 2v8c0 1.11-.89 2-2 2s-2-.89-2-2zm8-8c0-2.21-1.79-4-4-4H10c-2.21 0-4 1.79-4 4v8c0 2.21 1.79 4 4 4h4c2.21 0 4-1.79 4-4V8z"/>
+                                        </svg>
+                                        <span>Bank Account</span>
+                                    </div>
+                                </label>
+                                <label class="product-card">
+                                    <input type="radio" name="product" value="demat">
+                                    <div class="card-content">
+                                        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/>
+                                        </svg>
+                                        <span>Demat/Invest</span>
+                                    </div>
+                                </label>
+                                <label class="product-card">
+                                    <input type="radio" name="product" value="loan">
+                                    <div class="card-content">
+                                        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10z"/>
+                                        </svg>
+                                        <span>Personal Loan</span>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="button-group">
+                                <button type="button" class="secondary-button" onclick="prevStep()">Back</button>
+                                <button type="submit" class="primary-button">Find Offers</button>
+                            </div>
+                        </div>
+                    </form>
+                    
+                    <!-- Loading State -->
+                    <div class="step" id="loading-step">
+                        <div class="loading-content">
+                            <div class="spinner"></div>
+                            <h2>Analyzing best offers for you...</h2>
+                            <p>Please wait while we find the perfect match</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Age Restriction Modal -->
+                    <div class="step" id="age-restriction-step">
+                        <div class="age-restriction-content">
+                            <div class="restriction-icon">
+                                <svg width="64" height="64" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                </svg>
+                            </div>
+                            <h2>Sorry, you can't apply right now</h2>
+                            <p>You must be 18 or older to apply for financial products. Come back when you're eligible!</p>
+                            <button class="primary-button" onclick="showPage('landing-page')">Go Back</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Results -->
+                    <div class="step" id="results-step">
+                        <div class="result-content">
+                            <div class="recommended-badge">Recommended</div>
+                            <h2 id="result-title"></h2>
+                            <div class="benefits">
+                                <div class="benefit">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                    </svg>
+                                    Best rates in market
+                                </div>
+                                <div class="benefit">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                    </svg>
+                                    Quick approval process
+                                </div>
+                                <div class="benefit">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                    </svg>
+                                    Trusted by millions
+                                </div>
+                            </div>
+                            <button class="primary-button" id="result-button" onclick="redirectToAffiliate()">Apply Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Page -->
+    <div id="loading-page" class="page">
+        <div class="container">
+            <div class="loading-content">
+                <div class="spinner"></div>
+                <h2>Searching best offers...</h2>
+                <p>Finding personalized recommendations for you</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Results Page -->
+    <div id="results-page" class="page">
+        <div class="container">
+            <div class="result-card">
+                <div class="result-icon">🔗</div>
+                <h1 id="result-title"></h1>
+                <p id="result-description"></p>
+                <button class="cta-button" id="result-button" onclick="redirectToAffiliate()"></button>
+                <p class="disclaimer">You'll be redirected to our trusted partner to complete your application</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <span>Privacy Policy</span>
+            <span>•</span>
+            <span>Affiliate Disclosure: We may earn a commission</span>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
